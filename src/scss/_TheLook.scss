@@ -1,0 +1,137 @@
+/* The look section */
+.thelook {
+  margin-top: 68px;
+  justify-content: center;
+  background: #eeeeee;
+  padding-bottom: 35px;
+}
+
+.thelook-item {
+  position: relative;
+  margin: 15px auto;
+  color: #fff;
+  background: url('https://i.pinimg.com/originals/b5/5b/b0/b55bb0768faebf77101fb50bc421f9bd.jpg')
+    center/cover no-repeat;
+  height: 380px;
+  max-width: 420px;
+  text-align: center;
+}
+
+.second {
+  margin: 0 0 40px 0;
+  padding-top: 35px;
+}
+
+.thelook-item:nth-of-type(1) {
+  background-position-y: 30%;
+  // filter: brightness(80%);
+}
+
+.thelook-item:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('../img/home/accessories.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.second .thelook-item:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url('https://cdn.shopify.com/s/files/1/0131/9210/1952/products/merkmak-Men-Fashion-Lace-up-Ankle-Boots-High-Quality-Men-British-Boot-Autumn-Winter-Male-Botas_38c77307-cb61-4a47-9319-f48dc88db62b.jpg?v=1551953256')
+    center/cover;
+  background-position-y: 95%;
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+    font-weight: 400;
+  }
+}
+
+.second .thelook-item:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url('http://78.media.tumblr.com/186fd7e3500319b2fc0b09237179977e/tumblr_p2190gCWZE1r5jwlho4_500.jpg')
+    center/cover no-repeat;
+  background-position-y: 20%;
+  h3 {
+    margin: 0;
+    text-shadow: 0px 0px 4px black;
+  }
+  p {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    font-weight: 400;
+    text-shadow: 0px 0px 4px black;
+  }
+}
+
+.thelook-link {
+  text-decoration: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thelook-item h3 {
+  font-size: 1.9rem;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 800;
+  text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.6);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.thelook-item p {
+  font-family: 'Heebo', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.thelook-item p:last-child {
+  margin-top: 50px;
+}
+
+.shop-link {
+  font-family: 'Heebo', sans-serif;
+  text-decoration: none;
+  color: black;
+  border: 2px solid white;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  font-size: 0.9rem;
+  background: white;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  z-index: 2;
+  transform: translate3d(-50%, 0, 0);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+  transition: 0.3s all ease-in-out;
+  &:hover {
+    transform: translate3d(-50%, -2px, 0);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.4);
+  }
+}
+/* The look section end */

@@ -1,0 +1,129 @@
+/* Newsletter section */
+.newsletter {
+  padding: 80px 0;
+  margin: 0 auto;
+  width: 95%;
+
+  .newsletter-p {
+    font-size: 0.8rem;
+    color: grey;
+    margin-bottom: 50px;
+  }
+}
+
+.newsletter-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.newsletter-firstname {
+  width: 50%;
+}
+#firstname {
+  width: 332px;
+}
+#lastname {
+  width: 332px;
+}
+
+.newsletter-lastname {
+  width: 50%;
+}
+
+label {
+  display: block;
+  font-size: 0.7rem;
+  margin-bottom: 8px;
+  color: grey;
+}
+
+#firstname,
+#lastname,
+#email {
+  border: 1px solid lightgrey;
+  padding: 5px 15px;
+  font-weight: 100;
+  font-size: 12px;
+  height: 50px;
+  color: grey;
+}
+
+#email {
+  width: 332px;
+}
+
+.terms {
+  margin: 0.9rem 0 20px 0;
+  .option-title {
+    label {
+      color: #000;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.submitBtn {
+  width: 332px;
+  text-transform: uppercase;
+  background: #000;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-left: 0;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+  &:hover {
+    background: rgb(129, 129, 129);
+  }
+}
+
+input {
+  color: #000;
+}
+
+::placeholder {
+  color: grey;
+}
+
+/* Customize the label (the container) */
+.option-title {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.option-title input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  transition: 0.3s all ease-in-out;
+}
+.index {
+  top: -2px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.option-title input:checked ~ .checkmark {
+  background-color: #000;
+  border-color: #000;
+}
