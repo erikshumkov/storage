@@ -11,23 +11,11 @@
   }
 }
 
-.newsletter-flex {
-  display: flex;
-  flex-direction: row;
-}
-
-.newsletter-firstname {
-  width: 50%;
-}
 #firstname {
-  width: 332px;
+  width: 100%;
 }
 #lastname {
-  width: 332px;
-}
-
-.newsletter-lastname {
-  width: 50%;
+  width: 100%;
 }
 
 label {
@@ -49,7 +37,7 @@ label {
 }
 
 #email {
-  width: 332px;
+  width: 100%;
 }
 
 .terms {
@@ -63,7 +51,7 @@ label {
 }
 
 .submitBtn {
-  width: 332px;
+  width: 100%;
   text-transform: uppercase;
   background: #000;
   border: none;

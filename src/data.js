@@ -1,25 +1,3 @@
-// Images coats
-import lindebergBlack from './img/products/coat/lindeberg-black.jpg';
-import peakBlack from './img/products/coat/peak-black.jpg';
-import peakWhite from './img/products/coat/peak-white.jpg';
-import tigerBrown from './img/products/coat/tiger-brown.jpg';
-import tigerGreen from './img/products/coat/tiger-green.jpg';
-import filippaNavy from './img/products/coat/coatfk.jpg';
-// Boots
-import blackBoots from './img/products/boots/black-boots.jpg';
-import brownBoots from './img/products/boots/brown-boots.jpg';
-import brownBootsTwo from './img/products/boots/brown-boots2.jpg';
-import shinyBoots from './img/products/boots/shiny-boots.jpg';
-// Accessories
-import gloryGreen from './img/products/accessories/glory-green.jpg';
-import gloryGrey from './img/products/accessories/glory-grey.jpg';
-import lacosteBlue from './img/products/accessories/lacoste-blue.jpg';
-import oscarCheckered from './img/products/accessories/oscar-checkered.jpg';
-import peakArmy from './img/products/accessories/peak-army.jpg';
-import scottRed from './img/products/accessories/scott-red.jpg';
-import tigerBlack from './img/products/accessories/tiger-black.jpg';
-import tretornYellow from './img/products/accessories/tretorn-yellow.jpg';
-
 const productsData = [
   {
     id: 0,
@@ -27,9 +5,10 @@ const productsData = [
     brand: 'Filippa K',
     brandCheck: 'filippa',
     type: 'Hague Pea Coat',
+    route: 'hague-pea-coat',
     color: 'Navyblue',
     hexColor: '#000080',
-    url: `${filippaNavy}`,
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933285/images/coatfk_xmcwzp.jpg`,
     price: 370
   },
   {
@@ -38,9 +17,10 @@ const productsData = [
     brand: 'Peak Performance',
     brandCheck: 'peak',
     type: 'Y Parka',
+    route: 'y-parka',
     color: 'White',
     hexColor: '#FFF',
-    url: `${peakWhite}`,
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933286/images/peak-white_tzdrkl.jpg`,
     price: 550
   },
   {
@@ -49,9 +29,10 @@ const productsData = [
     brand: 'J.Lindeberg',
     brandCheck: 'lindeberg',
     type: 'Holger Melton Rock',
+    route: 'holger-melton-rock',
     color: 'Black',
     hexColor: '#000',
-    url: `${lindebergBlack}`,
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933286/images/lindeberg-black_dnsphp.jpg`,
     price: 380
   },
   {
@@ -60,9 +41,10 @@ const productsData = [
     brand: 'Tiger of Sweden',
     brandCheck: 'tiger',
     type: 'Ossien Jacket',
+    route: 'ossien-jacket',
     color: 'Dark Green',
     hexColor: '#4E4D30',
-    url: `${tigerGreen}`,
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933286/images/tiger-green_qrebht.jpg`,
     price: 550
   },
   {
@@ -71,9 +53,10 @@ const productsData = [
     brand: 'Peak Performance',
     brandCheck: 'peak',
     type: 'Rivel Vernis Jacket',
+    route: 'rivel-vernis-jacket',
     color: 'Black',
     hexColor: '#000',
-    url: `${peakBlack}`,
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933286/images/peak-black_zl7dfo.jpg`,
     price: 400
   },
   {
@@ -82,9 +65,10 @@ const productsData = [
     brand: 'Tiger of Sweden',
     brandCheck: 'tiger',
     type: 'Jacket',
+    route: 'jacket',
     color: 'Beige',
     hexColor: '#C2936A',
-    url: `${tigerBrown}`,
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933287/images/tiger-brown_xf7kbo.jpg`,
     price: 849
   },
   {
@@ -93,9 +77,10 @@ const productsData = [
     brand: 'These Glory Days',
     brandCheck: 'glory',
     type: 'Chelsea Boot',
+    route: 'chelsea-boot',
     color: 'Black',
     hexColor: '#000',
-    url: `${blackBoots}`,
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933285/images/black-boots_kqpegb.jpg`,
     price: 129
   },
   {
@@ -104,9 +89,10 @@ const productsData = [
     brand: 'TGA',
     brandCheck: 'tga',
     type: 'Cap Toe Boot',
+    route: 'cap-toe-boot',
     color: 'Brown',
-    hexColor: '#000',
-    url: `${brownBoots}`,
+    hexColor: '#4C2E25',
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933284/images/brown-boots_m8ap13.jpg`,
     price: 159
   },
   {
@@ -115,9 +101,10 @@ const productsData = [
     brand: 'TGA',
     brandCheck: 'tga',
     type: 'Chelsea Boot',
+    route: 'chelsea-boot-2',
     color: 'Brown',
-    hexColor: '#000',
-    url: `${brownBootsTwo}`,
+    hexColor: '#78321A',
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933285/images/brown-boots2_fzidel.jpg`,
     price: 159
   },
   {
@@ -126,9 +113,10 @@ const productsData = [
     brand: 'These Glory Days',
     brandCheck: 'glory',
     type: 'Collins Boot',
+    route: 'collins-boot',
     color: 'Dark Brown',
-    hexColor: '#000',
-    url: `${shinyBoots}`,
+    hexColor: '#514746',
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933284/images/shiny-boots_vpxtzc.jpg`,
     price: 169
   },
   {
@@ -137,9 +125,10 @@ const productsData = [
     brand: 'These Glory Days',
     brandCheck: 'glory',
     type: 'Brunello Scarf',
+    route: 'brunello-scarf',
     color: 'Green',
-    hexColor: '#000',
-    url: `${gloryGreen}`,
+    hexColor: '#54674C',
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933282/images/glory-green_s7n0hy.jpg`,
     price: 59
   },
   {
@@ -148,9 +137,10 @@ const productsData = [
     brand: 'These Glory Days',
     brandCheck: 'glory',
     type: 'Belluno Scarf',
+    route: 'belluno-scarf',
     color: 'Grey',
-    hexColor: '#000',
-    url: `${gloryGrey}`,
+    hexColor: '#46484D',
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933288/images/glory-grey_xhltsk.jpg`,
     price: 59
   },
   {
@@ -159,9 +149,10 @@ const productsData = [
     brand: 'Lacoste',
     brandCheck: 'lacoste',
     type: 'Beanie',
+    route: 'beanie',
     color: 'Navyblue',
-    hexColor: '#000',
-    url: `${lacosteBlue}`,
+    hexColor: '#282A3F',
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933283/images/lacoste-blue_nt0awt.jpg`,
     price: 29
   },
   {
@@ -170,9 +161,10 @@ const productsData = [
     brand: 'Oscar Jacobson',
     brandCheck: 'oscar',
     type: 'Wool Scarf',
+    route: 'wool-scarf',
     color: 'Brown',
-    hexColor: '#000',
-    url: `${oscarCheckered}`,
+    hexColor: '#62462A',
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933284/images/oscar-checkered_tejoai.jpg`,
     price: 129
   },
   {
@@ -181,9 +173,10 @@ const productsData = [
     brand: 'Peak Performance',
     brandCheck: 'peak',
     type: 'Beanie',
+    route: 'beanie-2',
     color: 'Dark Green',
-    hexColor: '#000',
-    url: `${peakArmy}`,
+    hexColor: '#1C2D26',
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933284/images/peak-army_cpku9v.jpg`,
     price: 50
   },
   {
@@ -192,9 +185,10 @@ const productsData = [
     brand: 'Lyle & Scott',
     brandCheck: 'lyle',
     type: 'Scarf',
+    route: 'scarf',
     color: 'Red',
-    hexColor: '#000',
-    url: `${scottRed}`,
+    hexColor: '#592029',
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933284/images/scott-red_od7vgo.jpg`,
     price: 169
   },
   {
@@ -203,9 +197,10 @@ const productsData = [
     brand: 'Tiger of Sweden',
     brandCheck: 'tiger',
     type: 'Hollein Beanie',
+    route: 'hollein-beanie',
     color: 'Black',
     hexColor: '#000',
-    url: `${tigerBlack}`,
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933282/images/tiger-black_mhqmva.jpg`,
     price: 79
   },
   {
@@ -214,9 +209,10 @@ const productsData = [
     brand: 'Tretorn',
     brandCheck: 'tretorn',
     type: 'Makia Beanie',
+    route: 'makia-beanie',
     color: 'Yellow',
-    hexColor: '#000',
-    url: `${tretornYellow}`,
+    hexColor: '#E4CA56',
+    url: `https://res.cloudinary.com/duckpx7as/image/upload/v1580933283/images/tretorn-yellow_oxaiqj.jpg`,
     price: 50
   }
 ];

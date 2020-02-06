@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, Suspense, lazy } from 'react';
 import './scss/styles.scss';
 
 // Data
 import productsData from './data';
 
 // Router
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Components
 import Nav from './js/components/Nav';
@@ -14,10 +14,10 @@ import Cart from './js/components/Cart';
 import StartAtTop from './js/components/StartAtTop';
 
 // Pages
-import Home from './js/components/pages/Home';
-import Products from './js/components/pages/Products';
-import SingleProduct from './js/components/pages/SingleProduct';
-import Login from './js/components/pages/Login';
+const Home = lazy(() => import('./js/components/pages/Home'));
+const Products = lazy(() => import('./js/components/pages/Products'));
+const SingleProduct = lazy(() => import('./js/components/pages/SingleProduct'));
+const Login = lazy(() => import('./js/components/pages/Login'));
 
 class App extends Component {
   state = {
@@ -103,7 +103,7 @@ class App extends Component {
         }
         if (item.category === 'accessories' && accessories) {
           return item;
-        }
+        } else return null;
       });
     }
 
@@ -133,7 +133,7 @@ class App extends Component {
           (item.brandCheck === 'tretorn' && tretorn)
         ) {
           return item;
-        }
+        } else return null;
       });
     }
 
@@ -191,14 +191,22 @@ class App extends Component {
     );
   };
 
-  // Add new item to cart
+  // Add new item to cart, only if it doesn't exist in cart.
   addItemToCart = object => {
     const items = this.state.cartItems;
     let newItem = object;
 
-    this.setState({
-      cartItems: [...items, newItem]
-    });
+    if (newItem.size.length > 0) {
+      if (items.some(item => item.name === newItem.name)) {
+        return null;
+      } else {
+        this.setState({
+          cartItems: [...items, newItem]
+        });
+      }
+    } else {
+      alert('Pick a size');
+    }
   };
 
   // Delete product from cart
@@ -219,56 +227,49 @@ class App extends Component {
           <StartAtTop>
             <Nav clickToOpenCart={this.clickToOpenCart} cartItems={cartItems} />
 
-            <Switch>
-              <Route
-                exact
-                path='/'
-                render={() => (
-                  <Fragment>
-                    <Home goToCoats={goToCoats} globalState={this.state} />
-                  </Fragment>
-                )}
-              />
-              <Route exact path='/login' component={Login} />
-              <Route
-                exact
-                path='/products'
-                render={props => (
-                  <Fragment>
-                    <Products
-                      {...props}
-                      filteredData={filteredData}
-                      globalState={this.state}
-                      productsData={productsData}
-                      clearAllFilters={clearAllFilters}
-                      change={change}
-                    />
-                  </Fragment>
-                )}
-              />
-              <Route
-                exact
-                path='/single-product'
-                render={props => (
-                  <Fragment>
-                    <SingleProduct productsData={productsData} />
-                  </Fragment>
-                )}
-              />
-              <Route
-                exact
-                path='/products/:product'
-                render={props => (
-                  <Fragment>
-                    <SingleProduct
-                      {...props}
-                      productsData={productsData}
-                      addItemToCart={this.addItemToCart}
-                    />
-                  </Fragment>
-                )}
-              />
-            </Switch>
+            <Suspense fallback={<div style={{ height: '100vh' }}></div>}>
+              <Switch>
+                <Route
+                  exact
+                  path='/'
+                  render={() => (
+                    <Fragment>
+                      <Home goToCoats={goToCoats} globalState={this.state} />
+                    </Fragment>
+                  )}
+                />
+                <Route exact path='/login' component={Login} />
+                <Route
+                  exact
+                  path='/products'
+                  render={props => (
+                    <Fragment>
+                      <Products
+                        {...props}
+                        filteredData={filteredData}
+                        globalState={this.state}
+                        productsData={productsData}
+                        clearAllFilters={clearAllFilters}
+                        change={change}
+                      />
+                    </Fragment>
+                  )}
+                />
+                <Route
+                  exact
+                  path='/products/:product'
+                  render={props => (
+                    <Fragment>
+                      <SingleProduct
+                        {...props}
+                        productsData={productsData}
+                        addItemToCart={this.addItemToCart}
+                      />
+                    </Fragment>
+                  )}
+                />
+              </Switch>
+            </Suspense>
 
             <Footer />
 

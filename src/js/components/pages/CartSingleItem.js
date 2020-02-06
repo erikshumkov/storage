@@ -11,6 +11,8 @@ class CartSingleItem extends Component {
         <div className='item-id'>
           <h5>{data.name}</h5>
           <p className='item-brand'>{data.brand}</p>
+          <p className='item-size'>Size: {data.size.toUpperCase()}</p>
+          <p className='item-color'>Color: {data.color}</p>
         </div>
         <div className='number'>
           <div className='minus' onClick={() => minus(index)}>

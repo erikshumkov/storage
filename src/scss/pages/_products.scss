@@ -4,14 +4,20 @@
 
   .wrapper {
     display: grid;
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: 23% 1fr;
+    max-width: 1550px;
+    margin: 0 auto;
 
     .filter-section {
       display: flex;
       flex-direction: column;
       background: #fff;
       height: 130vh;
+      max-width: 350px;
       padding: 20px 0 20px 40px;
+      user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
 
       .filter {
         margin: 1rem 0;
@@ -51,7 +57,7 @@
             font-size: 1rem;
             font-weight: 800;
             letter-spacing: 1px;
-            width: 43%;
+            width: 55%;
             text-transform: none;
             cursor: pointer;
           }
@@ -133,6 +139,7 @@
     }
 
     .products {
+      max-width: 1200px;
       .grid-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

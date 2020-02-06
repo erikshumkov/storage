@@ -5,7 +5,7 @@ const Product = ({ data }) => {
   return (
     <div className='img-container'>
       <div className={`img`} style={{ backgroundImage: `url(${data.url})` }}>
-        <Link to={`/products/${data.id}`} className='thelook-link'></Link>
+        <Link to={`/products/${data.route}`} className='thelook-link'></Link>
       </div>
       <h6>
         {data.brand} / {data.type}

@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import Product from './Product';
+// import MobileFilter from './MobileFilter';
+// import { FixedSizeGrid as Grid } from 'react-window';
+// import AutoSizer from 'react-virtualized-auto-sizer';
 
 class Products extends Component {
+  state = {
+    filter: false
+  };
+
+  toggle = () => {
+    this.setState({
+      filter: !this.state.filter
+    });
+  };
+
   render() {
     const { globalState, clearAllFilters, change } = this.props;
 
@@ -25,6 +38,35 @@ class Products extends Component {
     return (
       <div>
         <section id='shop'>
+          {/* Filter button */}
+          {/* <div className='mobile-filter'>
+            <div className='mobile-filter-menu'>
+              <button className='filter-button' onClick={this.toggle}>
+                Filter
+              </button>
+            </div>
+          </div> */}
+          {/* Filter page */}
+          {/* <div
+            className='filter-page'
+            style={
+              this.state.filter
+                ? { visibility: 'visible' }
+                : { visibility: 'hidden' }
+            }
+          > */}
+          {/* <MobileFilter
+              globalState={globalState}
+              change={change}
+              clearAllFilters={clearAllFilters}
+              checkboxTrue={checkboxTrue}
+              checkboxFalse={checkboxFalse}
+              labelTrue={labelTrue}
+              labelFalse={labelFalse}
+              toggle={this.toggle}
+              filterState={this.state.filter}
+            /> */}
+          {/* </div> */}
           <div className='wrapper'>
             <div className='filter-section'>
               <div className='filter'>
@@ -415,7 +457,6 @@ class Products extends Component {
               </div>
 
               <div className='filter-button'>
-                {/* <button>show products</button> */}
                 {globalState.filippa ||
                 globalState.tiger ||
                 globalState.lacoste ||

@@ -1,4 +1,3 @@
-/* The look section */
 .thelook {
   margin-top: 68px;
   justify-content: center;
@@ -24,18 +23,16 @@
 
 .thelook-item:nth-of-type(1) {
   background-position-y: 30%;
-  // filter: brightness(80%);
 }
 
 .thelook-item:nth-of-type(2) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url('../img/home/accessories.jpg');
+  background-image: url('https://res.cloudinary.com/duckpx7as/image/upload/v1580933281/images/accessories_i2zuwu.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 100%;
 }
 
 .second .thelook-item:nth-of-type(1) {
@@ -134,4 +131,3 @@
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.4);
   }
 }
-/* The look section end */

@@ -1,14 +1,31 @@
 import React, { Component } from 'react';
 
 class SingleProduct extends Component {
+  state = {
+    size: ''
+  };
+
+  handleChange = e => {
+    let { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
     const { productsData, match, addItemToCart } = this.props;
+    let checkRoute = productsData.filter(
+      data => data.route === match.params.product
+    );
+    let data = productsData[checkRoute[0].id];
 
     let item = {
-      name: productsData[match.params.product].type,
-      brand: productsData[match.params.product].brand,
-      url: productsData[match.params.product].url,
-      price: productsData[match.params.product].price,
+      name: data.type,
+      brand: data.brand,
+      color: data.color,
+      url: data.url,
+      price: data.price,
+      size: this.state.size,
       count: 1
     };
 
@@ -21,9 +38,7 @@ class SingleProduct extends Component {
                 <div
                   className='img'
                   style={{
-                    backgroundImage: `url(${
-                      productsData[match.params.product].url
-                    })`
+                    backgroundImage: `url(${data.url})`
                   }}
                 ></div>
               </div>
@@ -31,25 +46,26 @@ class SingleProduct extends Component {
             <div className='order-section'>
               <div className='order-section__container'>
                 <div className='product-information'>
-                  <h2>{productsData[match.params.product].brand}</h2>
-                  <h1>{productsData[match.params.product].type}</h1>
-                  <div className='price'>
-                    ${productsData[match.params.product].price}
-                  </div>
+                  <h2>{data.brand}</h2>
+                  <h1>{data.type}</h1>
+                  <div className='price'>${data.price}</div>
                   <div className='color'>
-                    <p>Color: {productsData[match.params.product].color}</p>
+                    <p>Color: {data.color}</p>
                     <div
                       className='color-square'
                       style={{
-                        background: `${
-                          productsData[match.params.product].hexColor
-                        }`
+                        background: `${data.hexColor}`
                       }}
                     ></div>
                   </div>
                 </div>
                 <div className='add-to-cart'>
-                  <select name='size' id='size'>
+                  <select
+                    name='size'
+                    id='size'
+                    onChange={this.handleChange}
+                    defaultValue={this.state.value}
+                  >
                     <option value=''>Pick a Size</option>
                     <option value='s'>S</option>
                     <option value='m'>M</option>
@@ -89,15 +105,15 @@ class SingleProduct extends Component {
                     </div>
                   </div>
                   <div className='delivery'>
-                    <label htmlFor='return'>
-                      Delivery & Return
-                      <span className='icon'>&times;</span>
-                    </label>
                     <input
                       type='checkbox'
                       id='return'
                       className='checkbox-return'
                     />
+                    <label htmlFor='return'>
+                      Delivery & Return
+                      <span className='icon'>&times;</span>
+                    </label>
                     <div className='content'>
                       <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing

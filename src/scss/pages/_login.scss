@@ -12,12 +12,14 @@
       h3 {
         margin-bottom: 4rem;
         font-size: 1.7rem;
-        font-weight: lighter;
+        font-weight: 100;
+        font-family: 'Heebo';
       }
       p {
         font-weight: 300;
         margin-bottom: 2rem;
         font-size: 0.9rem;
+        font-family: 'Heebo';
       }
       form {
         .input-details {
@@ -41,6 +43,9 @@
           label {
             margin-left: 10px;
             font-size: 0.8rem;
+            font-family: 'Heebo';
+            font-weight: 300;
+            color: black;
           }
         }
         .login {
@@ -58,6 +63,8 @@
       a.forgot {
         color: #000;
         font-size: 0.8rem;
+        font-family: 'Heebo';
+        font-weight: 500;
       }
     }
   }

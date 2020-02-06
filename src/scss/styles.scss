@@ -22,6 +22,8 @@
 @import 'Newsletter';
 @import 'Footer';
 @import 'cart';
+@import 'mobilefilter';
+@import 'mediaqueries';
 
 /* Header presentation */
 .presentation {
@@ -114,8 +116,10 @@
 
 .brand {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   padding-bottom: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .brand-img {
@@ -182,6 +186,8 @@
   padding: 18px 10px;
   font-weight: bold;
   margin-left: 0;
+  height: 50px;
+  align-self: flex-end;
 }
 
 /* Shopping bag */
@@ -251,84 +257,6 @@
   padding: 2px 10px;
 }
 /* Shopping bag end */
-
-/* Responsive design */
-
-@media screen and (min-width: 640px) {
-  .presentation {
-    background-position-y: 30%;
-  }
-
-  .thelook {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .thelook-item {
-    width: 42%;
-    max-width: 638px;
-    height: 288px;
-    margin: 8px 20px;
-  }
-
-  .thelook-item:nth-of-type(4) h3 {
-    margin: 0;
-  }
-
-  .thelook-item:nth-of-type(4) p {
-    margin-top: 5px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .presentation {
-    display: none;
-  }
-
-  .container {
-    margin: 0 auto 0 5%;
-  }
-
-  .thelook-item {
-    height: 636px;
-    width: 42%;
-  }
-
-  .brand-img {
-    margin: 0 50px;
-  }
-
-  .flexbox {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-
-  .newsletter-flex,
-  .newsletter-flex2 {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-  }
-
-  .newsletter-email {
-    width: 50%;
-  }
-
-  .submitBtn {
-    width: 50%;
-    height: 49px;
-    align-self: flex-end;
-    margin-bottom: 0;
-  }
-
-  .ship-info-flex {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-  }
-}
 
 .hidden {
   display: none;

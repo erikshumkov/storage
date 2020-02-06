@@ -6,7 +6,7 @@
   height: 100%;
   background: #f3f3f3;
   z-index: 1000;
-  transform: translate3d(2000px, 0, 0);
+  transform: translate3d(2300px, 0, 0);
   transition: transform 0.4s ease-in-out;
 
   .container {
@@ -18,7 +18,8 @@
       margin: 3rem 0 2rem;
     }
     .cart-items {
-      max-height: 365px;
+      min-height: 385px;
+      max-height: 385px;
       overflow-y: scroll;
 
       .cart-item {
@@ -31,7 +32,7 @@
           justify-content: center;
           align-items: center;
           height: 120px;
-          width: 120px;
+          width: 100px;
           background: grey;
           img {
             width: 100%;
@@ -139,9 +140,10 @@
         display: inline-block;
         background-color: black;
         color: white;
-        padding: 15px 90px;
-        border-radius: 4px;
+        padding: 13px 90px;
+        text-transform: uppercase;
         font-weight: 700;
+        font-size: 13px;
         cursor: pointer;
         transition: 0.3s all ease-in-out;
         &:hover {
