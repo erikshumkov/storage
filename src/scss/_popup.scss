@@ -1,0 +1,116 @@
+.added-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 999;
+}
+
+.added-modal {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  height: 350px;
+  width: 620px;
+  background: white;
+  z-index: 10000;
+  box-shadow: 0px 4px 12px 0px rgba(184, 184, 184, 1);
+  .container {
+    padding: 5px 20px;
+    margin: 0;
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      h4 {
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+      span {
+        font-size: 30px;
+        font-weight: 300;
+        cursor: pointer;
+      }
+    }
+    .modal-body {
+      display: grid;
+      grid-template-columns: 32% 1fr;
+      grid-gap: 10px;
+      .image {
+        width: 183px;
+        height: 244px;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .title {
+          p {
+            color: grey;
+            font-size: 13px;
+            font-weight: 300;
+          }
+        }
+        .item-name {
+          margin-bottom: 12px;
+          p {
+            font-size: 17px;
+          }
+        }
+        .price {
+          margin-bottom: 12px;
+          p {
+            font-size: 20px;
+          }
+        }
+        .size {
+          margin-bottom: 3px;
+          p {
+            font-size: 13px;
+            font-weight: 300;
+            color: grey;
+          }
+        }
+        .color {
+          p {
+            font-size: 13px;
+            font-weight: 300;
+            color: grey;
+          }
+        }
+        .buttons {
+          margin-top: 50px;
+          .keep-shop,
+          .go-checkout {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 13px 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 11px;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s all ease;
+            .modal-link {
+              text-decoration: none;
+              color: white;
+            }
+            &:hover {
+              background: #818181;
+            }
+          }
+          .go-checkout {
+            margin-left: 12px;
+          }
+        }
+      }
+    }
+  }
+}

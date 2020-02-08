@@ -1,5 +1,5 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
 
 @import url('https://fonts.googleapis.com/css?family=Martel+Sans:400,700,800,900&display=swap');
 
@@ -22,6 +22,7 @@
 @import 'Newsletter';
 @import 'Footer';
 @import 'cart';
+@import 'popup';
 @import 'mobilefilter';
 @import 'mediaqueries';
 
@@ -163,7 +164,7 @@
 }
 
 .info-item p {
-  font-weight: bold;
+  font-weight: 700;
   margin: 7px 0 7px 10px;
   font-size: 13px;
 }

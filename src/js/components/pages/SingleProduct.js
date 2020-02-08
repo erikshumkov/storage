@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import Popup from '../Popup';
 
 class SingleProduct extends Component {
   state = {
     size: ''
   };
+  // selectRef = React.createRef();
 
   handleChange = e => {
     let { name, value } = e.target;
@@ -13,7 +15,13 @@ class SingleProduct extends Component {
   };
 
   render() {
-    const { productsData, match, addItemToCart } = this.props;
+    const {
+      productsData,
+      match,
+      addItemToCart,
+      openPopup,
+      isPopupOpen
+    } = this.props;
     let checkRoute = productsData.filter(
       data => data.route === match.params.product
     );
@@ -29,8 +37,11 @@ class SingleProduct extends Component {
       count: 1
     };
 
+    // let select = this.selectRef.current;
+
     return (
       <div>
+        <Popup isPopupOpen={isPopupOpen} openPopup={openPopup} item={item} />
         <section id='single-product'>
           <div className='grid-container'>
             <div className='product-section'>
@@ -65,6 +76,7 @@ class SingleProduct extends Component {
                     id='size'
                     onChange={this.handleChange}
                     defaultValue={this.state.value}
+                    ref={element => this.selectRef = element}
                   >
                     <option value=''>Pick a Size</option>
                     <option value='s'>S</option>
@@ -72,7 +84,7 @@ class SingleProduct extends Component {
                     <option value='l'>L</option>
                     <option value='xl'>XL</option>
                   </select>
-                  <button onClick={() => addItemToCart(item)}>
+                  <button onClick={() => addItemToCart(item, this.selectRef)}>
                     Add to cart
                   </button>
                 </div>

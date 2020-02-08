@@ -39,7 +39,8 @@ class App extends Component {
     peak: false,
     tretorn: false,
     cartItems: [],
-    filteredData: productsData
+    filteredData: productsData,
+    isPopupOpen: false
   };
 
   // Plus counter, for the cart.
@@ -147,6 +148,9 @@ class App extends Component {
     this.setState({ openCart: !this.state.openCart });
   };
 
+  // Open closes Popup modal when item is added to cart
+  openPopup = () => this.setState({ isPopupOpen: !this.state.isPopupOpen });
+
   // Listens for changes in checkboxes and the price in the filter section.
   change = event => {
     const name = event.target.name;
@@ -192,7 +196,7 @@ class App extends Component {
   };
 
   // Add new item to cart, only if it doesn't exist in cart.
-  addItemToCart = object => {
+  addItemToCart = (object, select) => {
     const items = this.state.cartItems;
     let newItem = object;
 
@@ -203,9 +207,13 @@ class App extends Component {
         this.setState({
           cartItems: [...items, newItem]
         });
+        select.style.color = "grey";
+        select.style.borderColor = "rgb(169, 169, 169)";
+        this.openPopup();
       }
     } else {
-      alert('Pick a size');
+      select.style.color = "red";
+      select.style.borderColor = "red";
     }
   };
 
@@ -264,6 +272,8 @@ class App extends Component {
                         {...props}
                         productsData={productsData}
                         addItemToCart={this.addItemToCart}
+                        openPopup={this.openPopup}
+                        isPopupOpen={this.state.isPopupOpen}
                       />
                     </Fragment>
                   )}
