@@ -1,2 +1,0 @@
-(this.webpackJsonpstorage=this.webpackJsonpstorage||[]).push([[5],{40:function(e,t,a){"use strict";a.r(t);var n=a(0),s=a.n(n),o=a(37);t.default=function(e){var t=e.homeData;return s.a.createElement("section",{className:"thelook second"},t.map((function(e){return"second section"===e.section?s.a.createElement(o.a,{key:e.id,data:e}):null})))}}}]);
-//# sourceMappingURL=5.572a391a.chunk.js.map
