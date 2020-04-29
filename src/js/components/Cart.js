@@ -15,7 +15,7 @@ const Cart = ({
         className={openCart ? 'overlay-background' : ''}
         onClick={clickToOpenCart}
       ></div>
-      <div className={openCart ? 'shop-overlay open' : 'shop-overlay'}>
+      <div className={openCart ? 'shop-overlay open' : 'shop-overlay closed'}>
         <div className='container'>
           <h2>Shopping Cart</h2>
           <div className='cart-items'>
@@ -33,10 +33,10 @@ const Cart = ({
                 );
               })
             ) : (
-              <div className='cart-empty'>
-                <p>Your shopping cart is currently empty.</p>
-              </div>
-            )}
+                <div className='cart-empty'>
+                  <p>Your shopping cart is currently empty.</p>
+                </div>
+              )}
           </div>
 
           <div className={cartItems.length > 0 ? 'footer' : 'hidden'}>

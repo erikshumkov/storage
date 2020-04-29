@@ -157,6 +157,12 @@
 // Add this class when the modal gets open.
 .open {
   transform: translate3d(650px, 0, 0);
+  visibility: visible;
+}
+
+// Add this class when modal gets closed.
+.closed {
+  animation: closeCart 0.4s ease forwards;
 }
 
 // Close Cart on Outside Click with this div
@@ -168,4 +174,15 @@
   height: 100%;
   background: transparent;
   z-index: 999;
+}
+
+// Hide cart when closed
+@keyframes closeCart {
+  0% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: hidden;
+  }
 }

@@ -274,6 +274,7 @@ class App extends Component {
                         addItemToCart={this.addItemToCart}
                         openPopup={this.openPopup}
                         isPopupOpen={this.state.isPopupOpen}
+                        openCart={this.clickToOpenCart}
                       />
                     </Fragment>
                   )}

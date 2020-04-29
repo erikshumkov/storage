@@ -5,7 +5,6 @@ class SingleProduct extends Component {
   state = {
     size: ''
   };
-  // selectRef = React.createRef();
 
   handleChange = e => {
     let { name, value } = e.target;
@@ -20,7 +19,8 @@ class SingleProduct extends Component {
       match,
       addItemToCart,
       openPopup,
-      isPopupOpen
+      isPopupOpen,
+      openCart
     } = this.props;
     let checkRoute = productsData.filter(
       data => data.route === match.params.product
@@ -37,11 +37,9 @@ class SingleProduct extends Component {
       count: 1
     };
 
-    // let select = this.selectRef.current;
-
     return (
       <div>
-        <Popup isPopupOpen={isPopupOpen} openPopup={openPopup} item={item} />
+        <Popup isPopupOpen={isPopupOpen} openPopup={openPopup} item={item} openCart={openCart} />
         <section id='single-product'>
           <div className='grid-container'>
             <div className='product-section'>

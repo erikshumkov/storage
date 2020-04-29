@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Popup = ({ openPopup, isPopupOpen, item }) => {
-  // const show = {
-  //   display: 'block'
-  // };
-  // const hide = {
-  //   display: 'none'
-  // };
+const Popup = ({ openPopup, isPopupOpen, item, openCart }) => {
+
+  const closePopupOpenCart = () => {
+    openPopup();
+    openCart();
+  }
 
   return (
     <div>
@@ -60,7 +59,7 @@ const Popup = ({ openPopup, isPopupOpen, item }) => {
                     Keep shopping
                   </Link>
                 </button>
-                <button className='go-checkout'>Go to checkout</button>
+                <button className='go-checkout' onClick={closePopupOpenCart}>Go to cart</button>
               </div>
             </div>
           </div>

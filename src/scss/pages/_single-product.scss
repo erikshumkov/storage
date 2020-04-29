@@ -5,6 +5,8 @@
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
   }
   .product-section {
     height: 100vh;
@@ -168,4 +170,24 @@
 }
 .checkbox-return:checked + label .icon {
   transform: rotate(0deg);
+}
+
+@media (min-width: 1800px) {
+  #single-product {
+    .product-section {
+      .img-container {
+        height: 60vh;
+      }
+    }
+  }
+}
+
+@media (min-width: 2000px) {
+  #single-product {
+    .product-section {
+      .img-container {
+        height: 50vh;
+      }
+    }
+  }
 }
