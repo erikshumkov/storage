@@ -23,23 +23,7 @@ class App extends Component {
   state = {
     productsData,
     openCart: false,
-    min: 0,
-    max: 10000,
-    coats: false,
-    boots: false,
-    accessories: false,
-    filippa: false,
-    tiger: false,
-    lacoste: false,
-    lindeberg: false,
-    tga: false,
-    glory: false,
-    lyle: false,
-    oscar: false,
-    peak: false,
-    tretorn: false,
     cartItems: [],
-    filteredData: productsData,
     isPopupOpen: false
   };
 
@@ -69,80 +53,6 @@ class App extends Component {
     }
   };
 
-  // Get's all data then filters the data then puts that new data in state and shows the products that went through the filter.
-  filteredData = () => {
-    const {
-      filippa,
-      tiger,
-      lacoste,
-      lindeberg,
-      tga,
-      glory,
-      lyle,
-      oscar,
-      peak,
-      tretorn,
-      productsData,
-      boots,
-      accessories,
-      coats,
-      min,
-      max
-    } = this.state;
-    let newData;
-    newData = productsData.filter(item => {
-      return item.price >= min && item.price <= max;
-    });
-
-    if (coats || boots || accessories) {
-      newData = newData.filter(item => {
-        if (item.category === 'coats' && coats) {
-          return item;
-        }
-        if (item.category === 'boots' && boots) {
-          return item;
-        }
-        if (item.category === 'accessories' && accessories) {
-          return item;
-        } else return null;
-      });
-    }
-
-    if (
-      filippa ||
-      tiger ||
-      lacoste ||
-      lindeberg ||
-      tga ||
-      glory ||
-      lyle ||
-      oscar ||
-      peak ||
-      tretorn
-    ) {
-      newData = newData.filter(item => {
-        if (
-          (item.brandCheck === 'filippa' && filippa) ||
-          (item.brandCheck === 'tiger' && tiger) ||
-          (item.brandCheck === 'lacoste' && lacoste) ||
-          (item.brandCheck === 'lindeberg' && lindeberg) ||
-          (item.brandCheck === 'tga' && tga) ||
-          (item.brandCheck === 'glory' && glory) ||
-          (item.brandCheck === 'lyle' && lyle) ||
-          (item.brandCheck === 'oscar' && oscar) ||
-          (item.brandCheck === 'peak' && peak) ||
-          (item.brandCheck === 'tretorn' && tretorn)
-        ) {
-          return item;
-        } else return null;
-      });
-    }
-
-    this.setState({
-      filteredData: newData
-    });
-  };
-
   // Opens closes cart.
   clickToOpenCart = () => {
     this.setState({ openCart: !this.state.openCart });
@@ -150,50 +60,6 @@ class App extends Component {
 
   // Open closes Popup modal when item is added to cart
   openPopup = () => this.setState({ isPopupOpen: !this.state.isPopupOpen });
-
-  // Listens for changes in checkboxes and the price in the filter section.
-  change = event => {
-    const name = event.target.name;
-    const value =
-      event.target.type === 'checkbox'
-        ? event.target.checked
-        : event.target.value;
-
-    this.setState(
-      {
-        [name]: value
-      },
-      () => {
-        this.filteredData();
-      }
-    );
-  };
-
-  // Clear all the filters!
-  clearAllFilters = () => {
-    this.setState(
-      {
-        coats: false,
-        boots: false,
-        accessories: false,
-        filippa: false,
-        tiger: false,
-        lacoste: false,
-        lindeberg: false,
-        tga: false,
-        glory: false,
-        lyle: false,
-        oscar: false,
-        peak: false,
-        tretorn: false,
-        min: 0,
-        max: 10000
-      },
-      () => {
-        this.filteredData();
-      }
-    );
-  };
 
   // Add new item to cart, only if it doesn't exist in cart.
   addItemToCart = (object, select) => {
@@ -227,8 +93,7 @@ class App extends Component {
   };
 
   render() {
-    const { openCart, goToCoats, filteredData, cartItems } = this.state;
-    const { clearAllFilters, change } = this;
+    const { openCart, goToCoats, cartItems } = this.state;
     return (
       <Router>
         <div>
@@ -254,11 +119,7 @@ class App extends Component {
                     <Fragment>
                       <Products
                         {...props}
-                        filteredData={filteredData}
                         globalState={this.state}
-                        productsData={productsData}
-                        clearAllFilters={clearAllFilters}
-                        change={change}
                       />
                     </Fragment>
                   )}

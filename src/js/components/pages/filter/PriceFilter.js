@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PriceFilter({ globalState, change }) {
+function PriceFilter({ productState, change }) {
   return (
     <div>
       <div className='filter'>
@@ -23,7 +23,7 @@ function PriceFilter({ globalState, change }) {
               pattern='[0-9]*'
               className='min-price'
               name='min'
-              value={globalState.min}
+              value={productState.min}
               onChange={change}
             />
 
@@ -33,7 +33,7 @@ function PriceFilter({ globalState, change }) {
               id='maxPrice'
               pattern='[0-9]*'
               className='max-price'
-              value={globalState.max}
+              value={productState.max}
               onChange={change}
             />
           </div>

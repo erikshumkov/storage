@@ -1,6 +1,6 @@
 import React from 'react'
 
-function BrandFilter({ globalState, change }) {
+function BrandFilter({ productState, change }) {
 
   const checkboxTrue = {
     backgroundColor: '#000',
@@ -40,18 +40,18 @@ function BrandFilter({ globalState, change }) {
                   name='filippa'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.filippa}
+                  defaultChecked={productState.filippa}
                 />
                 <label
                   htmlFor='filippa'
-                  style={globalState.filippa ? labelTrue : labelFalse}
+                  style={productState.filippa ? labelTrue : labelFalse}
                 >
                   Filippa K
                         </label>
                 <span
                   className='checkmark'
                   style={
-                    globalState.filippa ? checkboxTrue : checkboxFalse
+                    productState.filippa ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>
@@ -64,10 +64,10 @@ function BrandFilter({ globalState, change }) {
                   name='tiger'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.tiger}
+                  defaultChecked={productState.tiger}
                 />
                 <label
-                  style={globalState.tiger ? labelTrue : labelFalse}
+                  style={productState.tiger ? labelTrue : labelFalse}
                   htmlFor='tiger'
                 >
                   Tiger of Sweden
@@ -75,7 +75,7 @@ function BrandFilter({ globalState, change }) {
                 <span
                   className='checkmark'
                   style={
-                    globalState.tiger ? checkboxTrue : checkboxFalse
+                    productState.tiger ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>
@@ -88,18 +88,18 @@ function BrandFilter({ globalState, change }) {
                   name='lindeberg'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.lindeberg}
+                  defaultChecked={productState.lindeberg}
                 />
                 <label
                   htmlFor='lindeberg'
-                  style={globalState.lindeberg ? labelTrue : labelFalse}
+                  style={productState.lindeberg ? labelTrue : labelFalse}
                 >
                   J Lindeberg
                         </label>
                 <span
                   className='checkmark'
                   style={
-                    globalState.lindeberg ? checkboxTrue : checkboxFalse
+                    productState.lindeberg ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>
@@ -112,17 +112,17 @@ function BrandFilter({ globalState, change }) {
                   name='tga'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.tga}
+                  defaultChecked={productState.tga}
                 />
                 <label
                   htmlFor='tga'
-                  style={globalState.tga ? labelTrue : labelFalse}
+                  style={productState.tga ? labelTrue : labelFalse}
                 >
                   TGA
                         </label>
                 <span
                   className='checkmark'
-                  style={globalState.tga ? checkboxTrue : checkboxFalse}
+                  style={productState.tga ? checkboxTrue : checkboxFalse}
                 ></span>
               </label>
             </div>
@@ -135,18 +135,18 @@ function BrandFilter({ globalState, change }) {
                   name='glory'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.glory}
+                  defaultChecked={productState.glory}
                 />
                 <label
                   htmlFor='glory'
-                  style={globalState.glory ? labelTrue : labelFalse}
+                  style={productState.glory ? labelTrue : labelFalse}
                 >
                   These Glory Days
                         </label>
                 <span
                   className='checkmark'
                   style={
-                    globalState.glory ? checkboxTrue : checkboxFalse
+                    productState.glory ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>
@@ -159,18 +159,18 @@ function BrandFilter({ globalState, change }) {
                   name='lacoste'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.lacoste}
+                  defaultChecked={productState.lacoste}
                 />
                 <label
                   htmlFor='lacoste'
-                  style={globalState.lacoste ? labelTrue : labelFalse}
+                  style={productState.lacoste ? labelTrue : labelFalse}
                 >
                   Lacoste
                         </label>
                 <span
                   className='checkmark'
                   style={
-                    globalState.lacoste ? checkboxTrue : checkboxFalse
+                    productState.lacoste ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>
@@ -183,18 +183,18 @@ function BrandFilter({ globalState, change }) {
                   name='lyle'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.lyle}
+                  defaultChecked={productState.lyle}
                 />
                 <label
                   htmlFor='lyle'
-                  style={globalState.lyle ? labelTrue : labelFalse}
+                  style={productState.lyle ? labelTrue : labelFalse}
                 >
                   Lyle & Scott
                         </label>
                 <span
                   className='checkmark'
                   style={
-                    globalState.lyle ? checkboxTrue : checkboxFalse
+                    productState.lyle ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>
@@ -207,18 +207,18 @@ function BrandFilter({ globalState, change }) {
                   name='oscar'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.oscar}
+                  defaultChecked={productState.oscar}
                 />
                 <label
                   htmlFor='oscar'
-                  style={globalState.oscar ? labelTrue : labelFalse}
+                  style={productState.oscar ? labelTrue : labelFalse}
                 >
                   Oscar Jacobson
                         </label>
                 <span
                   className='checkmark'
                   style={
-                    globalState.oscar ? checkboxTrue : checkboxFalse
+                    productState.oscar ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>
@@ -231,18 +231,18 @@ function BrandFilter({ globalState, change }) {
                   name='peak'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.peak}
+                  defaultChecked={productState.peak}
                 />
                 <label
                   htmlFor='peak'
-                  style={globalState.peak ? labelTrue : labelFalse}
+                  style={productState.peak ? labelTrue : labelFalse}
                 >
                   Peak Performance
                         </label>
                 <span
                   className='checkmark'
                   style={
-                    globalState.peak ? checkboxTrue : checkboxFalse
+                    productState.peak ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>
@@ -255,18 +255,18 @@ function BrandFilter({ globalState, change }) {
                   name='tretorn'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.tretorn}
+                  defaultChecked={productState.tretorn}
                 />
                 <label
                   htmlFor='tretorn'
-                  style={globalState.tretorn ? labelTrue : labelFalse}
+                  style={productState.tretorn ? labelTrue : labelFalse}
                 >
                   Tretorn
                         </label>
                 <span
                   className='checkmark'
                   style={
-                    globalState.tretorn ? checkboxTrue : checkboxFalse
+                    productState.tretorn ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>

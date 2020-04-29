@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CategoryFilter({ globalState, change }) {
+function CategoryFilter({ productState, change }) {
 
   const checkboxTrue = {
     backgroundColor: '#000',
@@ -44,10 +44,10 @@ function CategoryFilter({ globalState, change }) {
                   className='check-option'
                   name='coats'
                   onChange={change}
-                  defaultChecked={globalState.coats}
+                  defaultChecked={productState.coats}
                 />
                 <label
-                  style={globalState.coats ? labelTrue : labelFalse}
+                  style={productState.coats ? labelTrue : labelFalse}
                   htmlFor='coats'
                 >
                   Coats (6)
@@ -56,7 +56,7 @@ function CategoryFilter({ globalState, change }) {
                   name='coats'
                   className='checkmark'
                   style={
-                    globalState.coats ? checkboxTrue : checkboxFalse
+                    productState.coats ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>
@@ -69,10 +69,10 @@ function CategoryFilter({ globalState, change }) {
                   name='boots'
                   className='check-option'
                   onChange={change}
-                  defaultChecked={globalState.boots}
+                  defaultChecked={productState.boots}
                 />
                 <label
-                  style={globalState.boots ? labelTrue : labelFalse}
+                  style={productState.boots ? labelTrue : labelFalse}
                   htmlFor='boots'
                 >
                   Boots (4)
@@ -80,7 +80,7 @@ function CategoryFilter({ globalState, change }) {
                 <span
                   className='checkmark'
                   style={
-                    globalState.boots ? checkboxTrue : checkboxFalse
+                    productState.boots ? checkboxTrue : checkboxFalse
                   }
                 ></span>
               </label>
@@ -93,11 +93,11 @@ function CategoryFilter({ globalState, change }) {
                   className='check-option'
                   name='accessories'
                   onChange={change}
-                  defaultChecked={globalState.accessories}
+                  defaultChecked={productState.accessories}
                 />
                 <label
                   style={
-                    globalState.accessories ? labelTrue : labelFalse
+                    productState.accessories ? labelTrue : labelFalse
                   }
                   htmlFor='accessories'
                 >
@@ -106,7 +106,7 @@ function CategoryFilter({ globalState, change }) {
                 <span
                   className='checkmark'
                   style={
-                    globalState.accessories
+                    productState.accessories
                       ? checkboxTrue
                       : checkboxFalse
                   }
