@@ -19,6 +19,11 @@ function CategoryFilter({ productState, change }) {
     fontWeight: 'normal'
   };
 
+  const { coats, boots, accessories } = productState;
+  const category = ["coats", "boots", "accessories"];
+  const categoryVar = [coats, boots, accessories];
+  const numbers = [6, 4, 8];
+
   return (
     <div>
       <div className='filter'>
@@ -36,83 +41,39 @@ function CategoryFilter({ productState, change }) {
         </label>
         <div className='content'>
           <div className='category'>
-            <div className='option'>
-              <label className='option-title'>
-                <input
-                  type='checkbox'
-                  id='coats'
-                  className='check-option'
-                  name='coats'
-                  onChange={change}
-                  defaultChecked={productState.coats}
-                />
-                <label
-                  style={productState.coats ? labelTrue : labelFalse}
-                  htmlFor='coats'
-                >
-                  Coats (6)
-                        </label>
-                <span
-                  name='coats'
-                  className='checkmark'
-                  style={
-                    productState.coats ? checkboxTrue : checkboxFalse
-                  }
-                ></span>
-              </label>
-            </div>
-            <div className='option'>
-              <label className='option-title'>
-                <input
-                  type='checkbox'
-                  id='boots'
-                  name='boots'
-                  className='check-option'
-                  onChange={change}
-                  defaultChecked={productState.boots}
-                />
-                <label
-                  style={productState.boots ? labelTrue : labelFalse}
-                  htmlFor='boots'
-                >
-                  Boots (4)
-                        </label>
-                <span
-                  className='checkmark'
-                  style={
-                    productState.boots ? checkboxTrue : checkboxFalse
-                  }
-                ></span>
-              </label>
-            </div>
-            <div className='option'>
-              <label className='option-title'>
-                <input
-                  type='checkbox'
-                  id='accessories'
-                  className='check-option'
-                  name='accessories'
-                  onChange={change}
-                  defaultChecked={productState.accessories}
-                />
-                <label
-                  style={
-                    productState.accessories ? labelTrue : labelFalse
-                  }
-                  htmlFor='accessories'
-                >
-                  Accessories (8)
-                        </label>
-                <span
-                  className='checkmark'
-                  style={
-                    productState.accessories
-                      ? checkboxTrue
-                      : checkboxFalse
-                  }
-                ></span>
-              </label>
-            </div>
+
+
+            {category.map((cat, index) => {
+              let capitalizeTitle = `${cat.charAt(0).toUpperCase()}${cat.substring(1)}`
+
+              return <div key={numbers[index]} className='option'>
+                <label className='option-title'>
+                  <input
+                    type='checkbox'
+                    id={category[index]}
+                    className='check-option'
+                    name={category[index]}
+                    onChange={change}
+                    defaultChecked={categoryVar[index]}
+                  />
+                  <label
+                    style={categoryVar[index] ? labelTrue : labelFalse}
+                    htmlFor={category[index]}
+                  >
+                    {`${capitalizeTitle} (${numbers[index]})`}
+                  </label>
+                  <span
+                    name={category[index]}
+                    className='checkmark'
+                    style={
+                      categoryVar[index] ? checkboxTrue : checkboxFalse
+                    }
+                  ></span>
+                </label>
+              </div>
+            })}
+
+
           </div>
         </div>
       </div>
