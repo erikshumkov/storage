@@ -148,6 +148,16 @@
       }
       .img-container {
         margin-bottom: 10rem;
+        .img {
+          position: relative;
+          width: 291px;
+          height: 361px;
+          cursor: pointer;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
         h6 {
           font-size: 0.8rem;
           font-weight: 600;
@@ -160,15 +170,6 @@
       }
     }
   }
-}
-
-// Images temporary
-.img {
-  position: relative;
-  background-size: cover;
-  width: 291px;
-  height: 361px;
-  cursor: pointer;
 }
 
 .check-option {
