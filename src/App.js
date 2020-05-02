@@ -18,6 +18,7 @@ const Home = lazy(() => import('./js/components/pages/Home'));
 const Products = lazy(() => import('./js/components/pages/Products'));
 const SingleProduct = lazy(() => import('./js/components/pages/SingleProduct'));
 const Login = lazy(() => import('./js/components/pages/Login'));
+const Checkout = lazy(() => import("./js/components/pages/Checkout"));
 
 class App extends Component {
   state = {
@@ -56,6 +57,11 @@ class App extends Component {
   // Opens closes cart.
   clickToOpenCart = () => {
     this.setState({ openCart: !this.state.openCart });
+    if (this.state.openCart) {
+      document.body.style.overflowY = "visible";
+    } else {
+      document.body.style.overflowY = "hidden";
+    }
   };
 
   // Open closes Popup modal when item is added to cart
@@ -138,6 +144,17 @@ class App extends Component {
                         openCart={this.clickToOpenCart}
                       />
                     </Fragment>
+                  )}
+                />
+                <Route
+                  exact
+                  path="/checkout"
+                  render={props => (
+                    <Checkout
+                      {...props}
+                      productsData={productsData}
+                      cartItems={cartItems}
+                    />
                   )}
                 />
               </Switch>

@@ -21,9 +21,9 @@ function BrandFilter({ productState, change }) {
     fontWeight: 'normal'
   };
 
-  const { filippa, tiger, lacoste, lindeberg, tga, glory, lyle, oscar, peak, tretorn } = productState;
-  const brand = ["filippa", "tiger", "lacoste", "lindeberg", "tga", "glory", "lyle", "oscar", "peak", "tretorn"];
-  const brandVar = [filippa, tiger, lacoste, lindeberg, tga, glory, lyle, oscar, peak, tretorn];
+  const { filippa, tiger, lindeberg, tga, glory, lacoste, lyle, oscar, peak, tretorn } = productState;
+  const brand = ["filippa", "tiger", "lindeberg", "tga", "glory", "lacoste", "lyle", "oscar", "peak", "tretorn"];
+  const brandVar = [filippa, tiger, lindeberg, tga, glory, lacoste, lyle, oscar, peak, tretorn];
   const brandName = ["Filippa K", "Tiger of Sweden", "J Lindeberg", "TGA", "These Glory Days", "Lacoste", "Lyle & Scott", "Oscar Jacobson", "Peak Performance", "Tretorn"];
 
   return (

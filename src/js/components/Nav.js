@@ -18,10 +18,8 @@ const Nav = ({ clickToOpenCart, cartItems }) => {
             </Link>
           </li>
           <li className='shop-btn' onClick={clickToOpenCart}>
-            <i className='fas fa-shopping-bag'></i>
-            <div className={cartItems.length > 0 ? 'shop-items' : 'hidden'}>
-              {cartItems.length}
-            </div>
+            <i className='fas fa-shopping-cart'></i>
+            <div className={cartItems.length > 0 ? 'shop-items' : 'hidden'}></div>
           </li>
         </ul>
       </div>

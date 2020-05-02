@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CartSingleItem from './pages/CartSingleItem';
 
 const Cart = ({
@@ -34,7 +35,7 @@ const Cart = ({
               })
             ) : (
                 <div className='cart-empty'>
-                  <p>Your shopping cart is currently empty.</p>
+                  <p>Your shopping cart is empty.</p>
                 </div>
               )}
           </div>
@@ -52,8 +53,10 @@ const Cart = ({
             <button className='goback-btn' onClick={clickToOpenCart}>
               <i className='fas fa-chevron-left'></i>Go Back
             </button>
-            <div className={cartItems.length > 0 ? 'checkout-btn' : 'hidden'}>
-              Check Out
+            <div onClick={clickToOpenCart} className={cartItems.length > 0 ? 'checkout-btn' : 'hidden'}>
+              <Link className="checkout-link" to={`/checkout`}>
+                Check Out
+            </Link>
             </div>
           </div>
         </div>

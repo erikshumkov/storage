@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #f3f3f3;
+  background: #fff;
   z-index: 1000;
   transform: translate3d(2300px, 0, 0);
   transition: transform 0.4s ease-in-out;
@@ -49,7 +49,7 @@
           }
           p {
             font-size: 0.9rem;
-            color: #aaa;
+            color: #000;
           }
         }
 
@@ -65,7 +65,7 @@
             cursor: pointer;
           }
           .text {
-            color: grey;
+            color: #000;
             border: 1px solid lightgrey;
             padding: 5px 20px;
             border-radius: 5px;
@@ -98,7 +98,7 @@
           font-family: 'Heebo';
           font-weight: 300;
           font-size: 0.8rem;
-          color: grey;
+          color: #000;
         }
       }
     }
@@ -111,7 +111,7 @@
         text-align: right;
         .sub {
           font-weight: 600;
-          color: rgb(167, 167, 167);
+          color: #000;
           font-size: 1.1rem;
         }
         .total-cost {
@@ -137,6 +137,7 @@
         }
       }
       .checkout-btn {
+        position: relative;
         display: inline-block;
         background-color: black;
         color: white;
@@ -146,6 +147,10 @@
         font-size: 13px;
         cursor: pointer;
         transition: 0.3s all ease-in-out;
+        a {
+          color: white;
+          text-decoration: none;
+        }
         &:hover {
           background: #818181;
         }
@@ -169,11 +174,27 @@
 .overlay-background {
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
+  height: 480vh;
+  background: rgba(0, 0, 0, 0.3);
   z-index: 999;
+}
+
+.cart-items {
+  &::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #000000;
+  }
 }
 
 // Hide cart when closed
