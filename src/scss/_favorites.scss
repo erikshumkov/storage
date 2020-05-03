@@ -1,0 +1,38 @@
+.favorites {
+  padding: 70px 0 50px;
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    font-family: 'Heebo', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+  }
+
+  .favorite-container {
+    max-width: 1318px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 70px;
+
+    .favorite-item {
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      img {
+        width: 100%;
+      }
+      p,
+      span {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+      }
+      p {
+        font-weight: 700;
+      }
+    }
+  }
+}

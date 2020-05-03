@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from 'react';
+import { Link } from 'react-router-dom';
 
 // Components
 import HomeBox from './HomeBox';
@@ -7,6 +8,9 @@ const Shipping = lazy(() => import('../Shipping'));
 const SecondSection = lazy(() => import('../SecondSection'));
 
 const Home = ({ globalState }) => {
+
+  let data = globalState.productsData;
+
   return (
     <div>
       <section className='thelook'>
@@ -19,6 +23,48 @@ const Home = ({ globalState }) => {
             return null;
           }
         })}
+      </section>
+
+      <section className="favorites">
+        <h3>Favorites</h3>
+        <div className="favorite-container">
+          <div className="favorite-item">
+            <Link to={`/products/${data[1].route}`}>
+              <img src={`${data[1].url}`} alt={`${data[1].type}`} />
+              <div className="favorite-info">
+                <p>{`${data[1].type}`}</p>
+                <span>{`$${data[1].price}`}</span>
+              </div>
+            </Link>
+          </div>
+          <div className="favorite-item">
+            <Link to={`/products/${data[2].route}`}>
+              <img src={`${data[2].url}`} alt={`${data[2].type}`} />
+              <div className="favorite-info">
+                <p>{`${data[2].type}`}</p>
+                <span>{`$${data[2].price}`}</span>
+              </div>
+            </Link>
+          </div>
+          <div className="favorite-item">
+            <Link to={`/products/${data[6].route}`}>
+              <img src={`${data[6].url}`} alt={`${data[6].type}`} />
+              <div className="favorite-info">
+                <p>{`${data[6].type}`}</p>
+                <span>{`$${data[6].price}`}</span>
+              </div>
+            </Link>
+          </div>
+          <div className="favorite-item">
+            <Link to={`/products/${data[16].route}`}>
+              <img src={`${data[16].url}`} alt={`${data[16].type}`} />
+              <div className="favorite-info">
+                <p>{`${data[16].type}`}</p>
+                <span>{`$${data[16].price}`}</span>
+              </div>
+            </Link>
+          </div>
+        </div>
       </section>
 
       <Suspense fallback={<div></div>}>
