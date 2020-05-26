@@ -44,12 +44,7 @@ class SingleProduct extends Component {
           <div className='grid-container'>
             <div className='product-section'>
               <div className='img-container'>
-                <div
-                  className='img'
-                  style={{
-                    backgroundImage: `url(${data.url})`
-                  }}
-                ></div>
+                <img src={data.url} className="img" alt="The product" />
               </div>
             </div>
             <div className='order-section'>
